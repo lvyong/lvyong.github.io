@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="搭建java web工程中遇到的问题"/>
+
+
+
+
+  <meta name="keywords" content="Java Web, lvyong" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="lvyong">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="lvyong.github.io/2018/02/12/web¹¤³ÌÖÐÓöµ½µÄÎÊÌâ/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 搭建java web工程中遇到的问题 - lvyong </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">lvyong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about/">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">lvyong</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          搭建java web工程中遇到的问题
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-12
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/技术/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排查过程"><span class="toc-text">排查过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><blockquote>
+<p>&nbsp;前一段时间，我第一次尝试进行Java Web开发。需要将原来工程中的旧es(Elasticsearch)<br>服务相关的代码，替换成使用JDBC template方式。一开始，我直接在工程中进行开发，参考同事发给我的demo。我将其它涉及到的3个library引入到工程的pom.xml文件中。这个工程本地不能运行，需要发布到线上环境。我这边将工程打包成war文件，部署到线上tomcat容器下，结果运行发现，查询数据的接口没有响应，也没有错误日志打印。我排查了es相关的配置文件，发现配置文件没有问题。</p>
+</blockquote>
+<h3 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h3><pre><code>1. 为了排查此问题，我重新创建了一个Test工程。写了一个简单的测试接口，也在此工程中的pom.xml文件中，
+   引入了那三个库，及原来的es库。并且复制es配置文件到此工程。最后打成war包，部署到线上环境，发现
+   还是一样的问题，接口没有响应。
+
+2. 通过上面的测试，我肯定工程中的逻辑代码应该没有问题，问题可能出现在jar包的引入方面。我通过与同事
+   发给我的demo工程相比较，发现我的工程中的es的版本比较低。我替换成demo工程中的es版本，重新发布上线，
+   发现接口可以走通了。   
+</code></pre><a id="more"></a>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>   以后遇到要开发某种功能，那么在集成相应的jar包时，也要总体切换到配套版本的jar包。</p>
+
+      
+    </div>
+
+    
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Lv YongGang 的个人博客">Lv YongGang</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="/lvyong.github.io/2018/02/12/web¹¤³ÌÖÐÓöµ½µÄÎÊÌâ/" title="搭建java web工程中遇到的问题">搭建java web工程中遇到的问题</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="/lvyong.github.io/2018/02/12/web¹¤³ÌÖÐÓöµ½µÄÎÊÌâ/" title="搭建java web工程中遇到的问题">lvyong.github.io/2018/02/12/web¹¤³ÌÖÐÓöµ½µÄÎÊÌâ/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间： </strong>
+                2018年2月12日 - 14时02分
+            </li>  
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Lv YongGang 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java-Web/">Java Web</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/02/26/mysql/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">mysql</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:lvg2010@126.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Lv YongGang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

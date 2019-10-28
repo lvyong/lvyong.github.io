@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="浅谈Flutter插件(一)"/>
+
+
+
+
+  <meta name="keywords" content="flutter, lvyong" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="lvyong">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="lvyong.github.io/2019/10/25/flutter-plugin-introducation-md1/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 浅谈Flutter插件(一) - lvyong </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">lvyong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about/">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">lvyong</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          浅谈Flutter插件(一)
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-10-25
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/技术/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter插件原理浅谈"><span class="toc-text">Flutter插件原理浅谈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件分类"><span class="toc-text">Flutter插件分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件原理分析"><span class="toc-text">Flutter插件原理分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h1 id="Flutter插件原理浅谈"><a href="#Flutter插件原理浅谈" class="headerlink" title="Flutter插件原理浅谈"></a>Flutter插件原理浅谈</h1><h2 id="Flutter插件分类"><a href="#Flutter插件分类" class="headerlink" title="Flutter插件分类"></a>Flutter插件分类</h2><h2 id="Flutter插件原理分析"><a href="#Flutter插件原理分析" class="headerlink" title="Flutter插件原理分析"></a>Flutter插件原理分析</h2><ol>
+<li><p>下面针对PlatfromChannel进行说明，为了更好的举例，下面先展出示例代码。</p>
+<ul>
+<li><p>Dart端代码<br><img src="/image/flutter_plugin2.jpg" alt="avatar"></p>
+</li>
+<li><p>android端原生代码<br><img src="/image/flutter_plugin1.jpg" alt="avatar"></p>
+<a id="more"></a></li>
+</ul>
+</li>
+<li><p>下面先从Flutter端开始说起</p>
+<p>flutter插件先调用了MethodChannel.invokeMethod方法，在MethodChannel类中，此方法的定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;T&gt; invokeMethod&lt;T&gt;(String method, [ dynamic arguments ]) async &#123;</span><br><span class="line">  assert(method != null);</span><br><span class="line">  final ByteData result = await binaryMessenger.send(</span><br><span class="line">    name,</span><br><span class="line">    codec.encodeMethodCall(MethodCall(method, arguments)),</span><br><span class="line">  );</span><br><span class="line">  if (result == null) &#123;</span><br><span class="line">    throw MissingPluginException(&apos;No implementation found for method $method on channel $name&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  final T typedResult = codec.decodeEnvelope(result);</span><br><span class="line">  return typedResult;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>  此类方法定义在BasicMessageChannel.dart文件中，binaryMessenger对象在此类默认使用ServicesBinding.defaultBinaryMessenger<br>  codec对象是消息解码器，在此类中，使用StandardMethodCodec。</p>
+<p>  下面我们看一下ServicesBinding.defaultBinaryMessenger.send方法的实现逻辑。<br>其实最终ServicesBinding.defaultBinaryMessenger类映射到binding.dart文件中_DefaultBinaryMessenger类，此类继承于BinaryMessenger类，BinaryMessenger类是个抽象类，类的定义形式如下：<br><img src="/image/flutter_plugin3.jpg" alt="avatar"><br>_DefaultBinaryMessenger类send方法实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;ByteData&gt; send(String channel, ByteData message) &#123;</span><br><span class="line">  final MessageHandler handler = _mockHandlers[channel];</span><br><span class="line">  if (handler != null)</span><br><span class="line">    return handler(message);</span><br><span class="line">  return _sendPlatformMessage(channel, message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，如果在MethodChannel时调用setMethodCallHandler方法时，设置了回调，优先调用了这个回调。前面我们没有调用setMethodCallHandler方法，所以直接走_sendPlatformMessage方法。下面是_sendPlatformMessage方法实现</p>
+<figure class="highlight plain"><figcaption><span>_sendPlatformMessage(String channel, ByteData message) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  final Completer&lt;ByteData&gt; completer = Completer&lt;ByteData&gt;();</span><br><span class="line">  // ui.window is accessed directly instead of using ServicesBinding.instance.window</span><br><span class="line">  // because this method might be invoked before any binding is initialized.</span><br><span class="line">  // This issue was reported in #27541. It is not ideal to statically access</span><br><span class="line">  // ui.window because the Window may be dependency injected elsewhere with</span><br><span class="line">  // a different instance. However, static access at this location seems to be</span><br><span class="line">  // the least bad option.</span><br><span class="line">  ui.window.sendPlatformMessage(channel, message, (ByteData reply) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">      completer.complete(reply);</span><br><span class="line">    &#125; catch (exception, stack) &#123;</span><br><span class="line">      FlutterError.reportError(FlutterErrorDetails(</span><br><span class="line">        exception: exception,</span><br><span class="line">        stack: stack,</span><br><span class="line">        library: &apos;services library&apos;,</span><br><span class="line">        context: ErrorDescription(&apos;during a platform message response callback&apos;),</span><br><span class="line">      ));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  return completer.future;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 在此方法中，有ui.window对象，ui引用于 ‘dart:ui’ 库，ui.window最后映射到window.dart。在window.dart中，有window.dart中，定义了Window类，其中sendPlatformMessage方法，实现如下<br> <img src="/image/flutter_plugin4.jpg" alt="avatar"><br> 从此方法中，可以最终是调用到了Native层的_sendPlatformMessage方法。Native层是C++实现的。此方法在window.cc文件中，最终映射到下面的方法</p>
+<figure class="highlight plain"><figcaption><span>SendPlatformMessage(Dart_Handle window,</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">                                const std::string&amp; name,</span><br><span class="line">                                Dart_Handle callback,</span><br><span class="line">                                Dart_Handle data_handle) &#123;</span><br><span class="line">  UIDartState* dart_state = UIDartState::Current();</span><br><span class="line">  if (!dart_state-&gt;window()) &#123;</span><br><span class="line">    return tonic::ToDart(</span><br><span class="line">        &quot;Platform messages can only be sent from the main isolate&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  fml::RefPtr&lt;PlatformMessageResponse&gt; response;</span><br><span class="line">  if (!Dart_IsNull(callback)) &#123;</span><br><span class="line">    response = fml::MakeRefCounted&lt;PlatformMessageResponseDart&gt;(</span><br><span class="line">        tonic::DartPersistentValue(dart_state, callback),</span><br><span class="line">        dart_state-&gt;GetTaskRunners().GetUITaskRunner());</span><br><span class="line">  &#125;</span><br><span class="line">  if (Dart_IsNull(data_handle)) &#123;</span><br><span class="line">    dart_state-&gt;window()-&gt;client()-&gt;HandlePlatformMessage(</span><br><span class="line">        fml::MakeRefCounted&lt;PlatformMessage&gt;(name, response));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    tonic::DartByteData data(data_handle);</span><br><span class="line">    const uint8_t* buffer = static_cast&lt;const uint8_t*&gt;(data.data());</span><br><span class="line">    dart_state-&gt;window()-&gt;client()-&gt;HandlePlatformMessage(</span><br><span class="line">        fml::MakeRefCounted&lt;PlatformMessage&gt;(</span><br><span class="line">            name, std::vector&lt;uint8_t&gt;(buffer, buffer + data.length_in_bytes()),</span><br><span class="line">            response));</span><br><span class="line">  &#125;</span><br><span class="line">  return Dart_Null();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该方法主要功能：</p>
+<ul>
+<li>该方法是发送平台消息，则只允许从主isolate中发出，否则会跑出异常</li>
+<li>该SendPlatformMessage方法的参数name代表是channel名，data_handle是记录待执行的方法名和参数，callback是执行后回调反馈结果数据的方法</li>
+<li>创建PlatformMessageResponseDart对象，保存callback方法</li>
+<li>调用RuntimeController的HandlePlatformMessage来处理平台消息<br>RuntimeController类定义在flutter/runtime/runtime_controller.cc<figure class="highlight plain"><figcaption><span>RuntimeController::HandlePlatformMessage(</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    fml::RefPtr&lt;PlatformMessage&gt; message) &#123;</span><br><span class="line">  client_.HandlePlatformMessage(std::move(message));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的类最终调用到了Engine::HandlePlatformMessage[-&gt; flutter/shell/common/engine.cc]</p>
+<figure class="highlight plain"><figcaption><span>constexpr char kAssetChannel[] </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Engine::HandlePlatformMessage(fml::RefPtr&lt;PlatformMessage&gt; message) &#123;</span><br><span class="line">  if (message-&gt;channel() == kAssetChannel) &#123;</span><br><span class="line">    HandleAssetPlatformMessage(std::move(message));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    delegate_.OnEngineHandlePlatformMessage(std::move(message));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  下一步调用了Shell类OnEngineHandlePlatformMessage方法[-&gt; flutter/shell/common/shell.cc]</p>
+<figure class="highlight plain"><figcaption><span>Shell::OnEngineHandlePlatformMessage(</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  fml::RefPtr&lt;PlatformMessage&gt; message) &#123;</span><br><span class="line">FML_DCHECK(is_setup_);</span><br><span class="line">FML_DCHECK(task_runners_.GetUITaskRunner()-&gt;RunsTasksOnCurrentThread());</span><br><span class="line">if (message-&gt;channel() == kSkiaChannel) &#123;</span><br><span class="line">  HandleEngineSkiaMessage(std::move(message));</span><br><span class="line">  return;</span><br><span class="line">&#125;</span><br><span class="line">task_runners_.GetPlatformTaskRunner()-&gt;PostTask(</span><br><span class="line">    [view = platform_view_-&gt;GetWeakPtr(), message = std::move(message)]() &#123;</span><br><span class="line">      if (view) &#123;</span><br><span class="line">        view-&gt;HandlePlatformMessage(std::move(message));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来将HandlePlatformMessage的工作交给主线程的PlatformTaskRunner来处理，对于PlatformView在Android平台的实例为PlatformViewAndroid。<br>[-&gt; flutter/shell/platform/android/platform_view_android.cc]</p>
+<figure class="highlight plain"><figcaption><span>PlatformViewAndroid::HandlePlatformMessage(</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">    fml::RefPtr&lt;flutter::PlatformMessage&gt; message) &#123;</span><br><span class="line">  JNIEnv* env = fml::jni::AttachCurrentThread();</span><br><span class="line">  fml::jni::ScopedJavaLocalRef&lt;jobject&gt; view = java_object_.get(env);</span><br><span class="line">  if (view.is_null())</span><br><span class="line">    return;</span><br><span class="line">  int response_id = 0;</span><br><span class="line">  if (auto response = message-&gt;response()) &#123;</span><br><span class="line">    response_id = next_response_id_++;</span><br><span class="line">    pending_responses_[response_id] = response;</span><br><span class="line">  &#125;</span><br><span class="line">  auto java_channel = fml::jni::StringToJavaString(env, message-&gt;channel());</span><br><span class="line">  if (message-&gt;hasData()) &#123;</span><br><span class="line">    fml::jni::ScopedJavaLocalRef&lt;jbyteArray&gt; message_array(</span><br><span class="line">        env, env-&gt;NewByteArray(message-&gt;data().size()));</span><br><span class="line">    env-&gt;SetByteArrayRegion(</span><br><span class="line">        message_array.obj(), 0, message-&gt;data().size(),</span><br><span class="line">        reinterpret_cast&lt;const jbyte*&gt;(message-&gt;data().data()));</span><br><span class="line">    message = nullptr;</span><br><span class="line">    // This call can re-enter in InvokePlatformMessageXxxResponseCallback.</span><br><span class="line">    FlutterViewHandlePlatformMessage(env, view.obj(), java_channel.obj(),</span><br><span class="line">                                     message_array.obj(), response_id);</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    message = nullptr;</span><br><span class="line">    // This call can re-enter in InvokePlatformMessageXxxResponseCallback.</span><br><span class="line">    FlutterViewHandlePlatformMessage(env, view.obj(), java_channel.obj(),</span><br><span class="line">                                     nullptr, response_id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[-&gt; flutter/shell/platform/android/platform_view_android_jni.cc]</p>
+<figure class="highlight plain"><figcaption><span>FlutterViewHandlePlatformMessage(JNIEnv* env, jobject obj,</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">                                     jstring channel, jobject message,</span><br><span class="line">                                     jint responseId) &#123;</span><br><span class="line">   env-&gt;CallVoidMethod(obj, g_handle_platform_message_method, channel, message, responseId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来，会调用到FlutterJNI类的handlePlatformMessage方法中，此方法[-&gt;flutter/shell/platform/android/io/flutter/embedding/engine/FlutterJNI.java]<br>终于调用到Java代码了。</p>
+<figure class="highlight plain"><figcaption><span>TODO(mattcarroll): determine if message is nonull or nullable</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@SuppressWarnings(&quot;unused&quot;)</span><br><span class="line">private void handlePlatformMessage(@NonNull final String channel, byte[] message, final int replyId) &#123;</span><br><span class="line">  if (platformMessageHandler != null) &#123;</span><br><span class="line">    platformMessageHandler.handleMessageFromDart(channel, message, replyId);</span><br><span class="line">  &#125;</span><br><span class="line">  // TODO(mattcarroll): log dropped messages when in debug mode (https://github.com/flutter/flutter/issues/25391)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.从宿主端android开始</p>
+<ul>
+<li><p>3.1 FlutterView<br>在android原生页面，每个activity都继承于FlutterActivity。在FlutterActivity中有个代理类FlutterActivityDelegate类，此类代理了Activity类的几个生命周期方法，下面先从此类的onCreate说明，在此方法中定义了FlutterView，Activity的根view就是FlutterView，FlutterView继承SurfaceView，另外实现了BinaryMessenger，TextureRegistry两个接口，这个BinaryMessage接口很重要，后面会讲到。下面是FlutterActivityDelegate类中onCreate方法的定义：</p>
+<figure class="highlight plain"><figcaption><span>class FlutterView extends SurfaceView implements BinaryMessenger, TextureRegistry &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> 	......</span><br><span class="line">    public void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    ......</span><br><span class="line">    this.flutterView = this.viewFactory.createFlutterView(this.activity);</span><br><span class="line">    if (this.flutterView == null) &#123;</span><br><span class="line">        FlutterNativeView nativeView = this.viewFactory.createFlutterNativeView();</span><br><span class="line">        this.flutterView = new FlutterView(this.activity, (AttributeSet)null, nativeView);</span><br><span class="line">        this.flutterView.setLayoutParams(matchParent);</span><br><span class="line">        this.activity.setContentView(this.flutterView);</span><br><span class="line">       ......</span><br><span class="line">    &#125;</span><br><span class="line">   ......</span><br><span class="line"> &#125;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建FlutterView时，传入了FlutterNativeView。</p>
+<ul>
+<li>3.2 FlutterNativeView<br>FlutterNativeView构造器定义如下：<figure class="highlight plain"><figcaption><span>FlutterNativeView(@NonNull Context context, boolean isBackgroundView) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    this.mContext = context;</span><br><span class="line">    this.mPluginRegistry = new FlutterPluginRegistry(this, context);</span><br><span class="line">    this.mFlutterJNI = new FlutterJNI();</span><br><span class="line">    this.mFlutterJNI.setRenderSurface(new FlutterNativeView.RenderSurfaceImpl());</span><br><span class="line">    this.dartExecutor = new DartExecutor(this.mFlutterJNI, context.getAssets());</span><br><span class="line">    this.mFlutterJNI.addEngineLifecycleListener(new FlutterNativeView.EngineLifecycleListenerImpl());</span><br><span class="line">    this.attach(this, isBackgroundView);</span><br><span class="line">    this.assertAttached();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其中FlutterJNI类提前我们提到过，最后dart插件的方法，最后调用了FlutterJNI.handlePlatformMessage方法，那么现在就需要找到在何处调用了FlutterJNI.setPlatformMessageHandler方法。<br>从上面的代码中，FlutterJNI类传给了DartExecutor类。</p>
+<ul>
+<li>3.3 DartExecutor<br>DartExecutor类的构造类说明如下：<figure class="highlight plain"><figcaption><span>DartExecutor(@NonNull FlutterJNI flutterJNI, @NonNull AssetManager assetManager) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    this.flutterJNI = flutterJNI;</span><br><span class="line">    this.assetManager = assetManager;</span><br><span class="line">    this.messenger = new DartMessenger(flutterJNI);</span><br><span class="line">    this.messenger.setMessageHandler(&quot;flutter/isolate&quot;, this.isolateChannelMessageHandler);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>3.4 DartMessenger<br> DartMessenger类的构造器类说明如下：</p>
+<figure class="highlight plain"><figcaption><span>class DartMessenger implements BinaryMessenger, PlatformMessageHandler </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">  DartMessenger(@NonNull FlutterJNI flutterJNI) &#123;</span><br><span class="line">      this.flutterJNI = flutterJNI;</span><br><span class="line">      this.messageHandlers = new HashMap();</span><br><span class="line">      this.pendingReplies = new HashMap();</span><br><span class="line">  &#125;</span><br><span class="line">  public void setMessageHandler(@NonNull String channel, @Nullable BinaryMessageHandler handler) &#123;</span><br><span class="line">      if (handler == null) &#123;</span><br><span class="line">          Log.v(&quot;DartMessenger&quot;, &quot;Removing handler for channel &apos;&quot; + channel + &quot;&apos;&quot;);</span><br><span class="line">          this.messageHandlers.remove(channel);</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">          Log.v(&quot;DartMessenger&quot;, &quot;Setting handler for channel &apos;&quot; + channel + &quot;&apos;&quot;);</span><br><span class="line">          this.messageHandlers.put(channel, handler);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  @UiThread</span><br><span class="line">  public void send(@NonNull String channel, @NonNull ByteBuffer message) &#123;</span><br><span class="line">      Log.v(&quot;DartMessenger&quot;, &quot;Sending message over channel &apos;&quot; + channel + &quot;&apos;&quot;);</span><br><span class="line">      this.send(channel, message, (BinaryReply)null);</span><br><span class="line">  &#125;</span><br><span class="line">  public void handleMessageFromDart(@NonNull String channel, @Nullable byte[] message, int replyId) &#123;</span><br><span class="line">      Log.v(&quot;DartMessenger&quot;, &quot;Received message from Dart over channel &apos;&quot; + channel + &quot;&apos;&quot;);</span><br><span class="line">      BinaryMessageHandler handler = (BinaryMessageHandler)this.messageHandlers.get(channel);</span><br><span class="line">      if (handler != null) &#123;</span><br><span class="line">          try &#123;</span><br><span class="line">              Log.v(&quot;DartMessenger&quot;, &quot;Deferring to registered handler to process message.&quot;);</span><br><span class="line">              ByteBuffer buffer = message == null ? null : ByteBuffer.wrap(message);</span><br><span class="line">              handler.onMessage(buffer, new DartMessenger.Reply(this.flutterJNI, replyId));</span><br><span class="line">          &#125; catch (Exception var6) &#123;</span><br><span class="line">              Log.e(&quot;DartMessenger&quot;, &quot;Uncaught exception in binary message listener&quot;, var6);</span><br><span class="line">              this.flutterJNI.invokePlatformMessageEmptyResponseCallback(replyId);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">          Log.v(&quot;DartMessenger&quot;, &quot;No registered handler for message. Responding to Dart with empty reply message.&quot;);</span><br><span class="line">          this.flutterJNI.invokePlatformMessageEmptyResponseCallback(replyId);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>DartMessenger类实现了platfromMessageHandler接口中的handleMessageFromDart方法，最终FlutterJNI是调用到了DartMessenger类handleMessageFromDart方法。下面就需要找FlutterJNI调用setPlatformMessageHandler(new DartMessager())的地方，我们往回看，发现DartExecutor类onAttachedToJNI方法正好实现了。</p>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>void onAttachedToJNI() &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    Log.v(&quot;DartExecutor&quot;, &quot;Attached to JNI. Registering the platform message handler for this Dart execution context.&quot;);</span><br><span class="line">    this.flutterJNI.setPlatformMessageHandler(this.messenger);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  接着再往下看，又回到FlutterNativeView类，发现实现了FlutterNativeView调用了DartExecutor类的onAttachedToJNI方法，此方法定义如下：</p>
+<figure class="highlight plain"><figcaption><span>void attach(FlutterNativeView view, boolean isBackgroundView) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    this.mFlutterJNI.attachToNative(isBackgroundView);</span><br><span class="line">    this.dartExecutor.onAttachedToJNI();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>attach方法在FlutterNativeView类的构造器中调用了。这样知道FlutterJNI类调用setPlatformMessageHandler方法了。<br>下面就看DartMessenger类的setMessageHandler方法在什么地方调用了。一直往回看，最终调用到了FlutterView.setMessageHandler方法，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@UiThread</span><br><span class="line">public void setMessageHandler(String channel, BinaryMessageHandler handler) &#123;</span><br><span class="line">    this.mNativeView.setMessageHandler(channel, handler);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>3.5 MethodChannel<br>下面我们从MethodChannel类看起，看看自定义的插件，是如何在被调用的。在自定义的Activity中，如果要让插件使用，需要在onCreate方法中，调用如下语句：</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>class MainActivity extends FlutterActivity &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  @Override</span><br><span class="line">  protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">      super.onCreate(savedInstanceState);</span><br><span class="line">      GeneratedPluginRegistrant.registerWith(this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最终调用到了我的自定义插件JdmaFlutterPlugin，在此插件中创建了MethodChannel对象，并且此对象调用了setMethodCallHandler方法，代码如下：</p>
+<figure class="highlight plain"><figcaption><span>class JdmaFlutterPlugin implements MethodChannel.MethodCallHandler &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">private static final String TAG = &quot;JDMAPlugin&quot;;</span><br><span class="line">private String account;</span><br><span class="line">private Context context;</span><br><span class="line">private boolean isDebug = false;</span><br><span class="line">private static final String CHANNEL_NAME = &quot;xxx&quot;;</span><br><span class="line">public static void registerWith(PluginRegistry.Registrar registrar) &#123;</span><br><span class="line">    final MethodChannel channel = new MethodChannel(registrar.messenger(), CHANNEL_NAME);</span><br><span class="line">    channel.setMethodCallHandler(new JdmaFlutterPlugin(registrar.context()));</span><br><span class="line">&#125;</span><br><span class="line">private JdmaFlutterPlugin(Context context) &#123;</span><br><span class="line">    this.context = context;</span><br><span class="line">&#125;</span><br><span class="line">@Override</span><br><span class="line">public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) &#123;</span><br><span class="line">    switch (methodCall.method) &#123;</span><br><span class="line">        case &quot;setDebug&quot;:</span><br><span class="line">            isDebug = (Boolean) methodCall.arguments;</span><br><span class="line">            JDMaInterface.setShowLog(isDebug);</span><br><span class="line">            result.success(null);</span><br><span class="line">            break;</span><br></pre></td></tr></table></figure>
+<p>在接着往下看，MethodChannel类定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public final class MethodChannel &#123;</span><br><span class="line">private static final String TAG = &quot;MethodChannel#&quot;;</span><br><span class="line">private final BinaryMessenger messenger;</span><br><span class="line">private final String name;</span><br><span class="line">private final MethodCodec codec;</span><br><span class="line">public MethodChannel(BinaryMessenger messenger, String name) &#123;</span><br><span class="line">    this(messenger, name, StandardMethodCodec.INSTANCE);</span><br><span class="line">&#125;</span><br><span class="line">......</span><br><span class="line">@UiThread</span><br><span class="line">public void setMethodCallHandler(@Nullable MethodChannel.MethodCallHandler handler) &#123;</span><br><span class="line">    this.messenger.setMessageHandler(this.name, handler == null ? null : new MethodChannel.IncomingMethodCallHandler(handler));</span><br><span class="line">&#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>现在重点是BinaryMessenger对象，最终实现PluginRegistry接口的类发现是FlutterView类，FlutterView类实现了BinaryMessenger接口，这恰好找到了3.4节最后FlutterView调用setMessageHandler的地方。</p>
+<p>4.Dart中的参数解码</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+      
+    </div>
+
+    
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Lv YongGang 的个人博客">Lv YongGang</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="/lvyong.github.io/2019/10/25/flutter-plugin-introducation-md1/" title="浅谈Flutter插件(一)">浅谈Flutter插件(一)</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="/lvyong.github.io/2019/10/25/flutter-plugin-introducation-md1/" title="浅谈Flutter插件(一)">lvyong.github.io/2019/10/25/flutter-plugin-introducation-md1/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间： </strong>
+                2019年10月25日 - 16时10分
+            </li>  
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Lv YongGang 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/flutter/">flutter</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/09/12/todoList/">
+        <span class="next-text nav-default">todoList</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:lvg2010@126.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Lv YongGang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

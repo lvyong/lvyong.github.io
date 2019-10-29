@@ -237,14 +237,90 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter插件原理浅谈"><span class="toc-text">Flutter插件原理浅谈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件分类"><span class="toc-text">Flutter插件分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件原理分析"><span class="toc-text">Flutter插件原理分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter插件原理浅谈"><span class="toc-text">Flutter插件原理浅谈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Platform-Channel"><span class="toc-text">Platform Channel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息传递与编解码器"><span class="toc-text">消息传递与编解码器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plaffrom-数据类型支持"><span class="toc-text">Plaffrom 数据类型支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件原理分析"><span class="toc-text">Flutter插件原理分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h1 id="Flutter插件原理浅谈"><a href="#Flutter插件原理浅谈" class="headerlink" title="Flutter插件原理浅谈"></a>Flutter插件原理浅谈</h1><h2 id="Flutter插件分类"><a href="#Flutter插件分类" class="headerlink" title="Flutter插件分类"></a>Flutter插件分类</h2><h2 id="Flutter插件原理分析"><a href="#Flutter插件原理分析" class="headerlink" title="Flutter插件原理分析"></a>Flutter插件原理分析</h2><ol>
+        <h1 id="Flutter插件原理浅谈"><a href="#Flutter插件原理浅谈" class="headerlink" title="Flutter插件原理浅谈"></a>Flutter插件原理浅谈</h1><h2 id="Platform-Channel"><a href="#Platform-Channel" class="headerlink" title="Platform Channel"></a>Platform Channel</h2><ol>
+<li>Platform Channel是Flutter端与Platform端指定的通信机制，它分为三种:<br>(1) BasicMessageChannel: 用于传递字符串和半结构化的信息(在大内存数据块传递的情况下使用)。<br> (2) MethodChannel: 用于传递方法的调用（method invocation）。<br> (3) EventChannel:用于数据流（event streams）的通信。</li>
+</ol>
+<h2 id="消息传递与编解码器"><a href="#消息传递与编解码器" class="headerlink" title="消息传递与编解码器"></a>消息传递与编解码器</h2><p>   <img src="/image/flutter_plugin5.jpg" alt="avatar"><br>   从图中可以看出，不同的Handler对应不同的消息通道。<br>   其中，中间通信的消息都是编码的二进制格式形式，需要通过消息解码器进行处理。<br>   编码分为两种：MessageCodec 和MethodCodec。其中，MessageCodec包括BinaryCodec， StringCodec，JSONMesageCodec和 StandardMessageCodec,<br>   MethodCodec包括JSONMethodCodec 和 StandardMethodCodec。</p>
+<h2 id="Plaffrom-数据类型支持"><a href="#Plaffrom-数据类型支持" class="headerlink" title="Plaffrom 数据类型支持"></a>Plaffrom 数据类型支持</h2><p>   Flutter默认的消息编码器（StandardMessageCodec）,目前支持的数据类型如下：</p>
+<table>
+<thead>
+<tr>
+<th>Dart</th>
+<th>Android</th>
+<th>IOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>null</td>
+<td>null</td>
+<td>nil(NSNull when nested)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>Java.lang.Boolean</td>
+<td>NSNumber numberWithBool:</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Java.lang.Integer</td>
+<td>NSNumber numberWithInt:</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Java.lang.Long</td>
+<td>NSNumber numberWithLong:</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Java.lang.Double</td>
+<td>NSNumber numberWithDouble:</td>
+</tr>
+<tr>
+<td>String</td>
+<td>Java.lang.String</td>
+<td>NSSttring</td>
+</tr>
+<tr>
+<td>Unit8List</td>
+<td>byte[]</td>
+<td>FlutterStandardTypedData typedDataWithBytes:</td>
+</tr>
+<tr>
+<td>int32List</td>
+<td>int[]</td>
+<td>FlutterStandardTypedData typedDataWithInt32:</td>
+</tr>
+<tr>
+<td>int64List</td>
+<td>long[]</td>
+<td>FlutterStandardTypedData typedDataWithInt64:</td>
+</tr>
+<tr>
+<td>Float64List</td>
+<td>double[]</td>
+<td>FlutterStandardTypedData typedDataWithFloat64:</td>
+</tr>
+<tr>
+<td>List</td>
+<td>java.util.ArrayList</td>
+<td>NSArray</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>java.util.HashMap</td>
+<td>NSDictionary</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Flutter插件原理分析"><a href="#Flutter插件原理分析" class="headerlink" title="Flutter插件原理分析"></a>Flutter插件原理分析</h2><ol>
 <li><p>下面针对PlatfromChannel进行说明，为了更好的举例，下面先展出示例代码。</p>
 <ul>
 <li><p>Dart端代码<br><img src="/image/flutter_plugin2.jpg" alt="avatar"></p>
@@ -317,10 +393,9 @@
 <p>在接着往下看，MethodChannel类定义如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public final class MethodChannel &#123;</span><br><span class="line">private static final String TAG = &quot;MethodChannel#&quot;;</span><br><span class="line">private final BinaryMessenger messenger;</span><br><span class="line">private final String name;</span><br><span class="line">private final MethodCodec codec;</span><br><span class="line">public MethodChannel(BinaryMessenger messenger, String name) &#123;</span><br><span class="line">    this(messenger, name, StandardMethodCodec.INSTANCE);</span><br><span class="line">&#125;</span><br><span class="line">......</span><br><span class="line">@UiThread</span><br><span class="line">public void setMethodCallHandler(@Nullable MethodChannel.MethodCallHandler handler) &#123;</span><br><span class="line">    this.messenger.setMessageHandler(this.name, handler == null ? null : new MethodChannel.IncomingMethodCallHandler(handler));</span><br><span class="line">&#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 <p>现在重点是BinaryMessenger对象，最终实现PluginRegistry接口的类发现是FlutterView类，FlutterView类实现了BinaryMessenger接口，这恰好找到了3.4节最后FlutterView调用setMessageHandler的地方。</p>
-<p>4.Dart中的参数解码</p>
-</li>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>
+
       
     </div>
 

@@ -213,6 +213,111 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2020/08/11/gitlab-CI-CD/">gitlab_CI_CD</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-08-11
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/技术/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="记录几个有用的关于编写-gitlab-ci-yml文件的文档链接"><a href="#记录几个有用的关于编写-gitlab-ci-yml文件的文档链接" class="headerlink" title="记录几个有用的关于编写.gitlab-ci.yml文件的文档链接"></a>记录几个有用的关于编写.gitlab-ci.yml文件的文档链接</h2><ol>
+<li><a href="https://www.debian.cn/archives/2537" target="_blank" rel="noopener">https://www.debian.cn/archives/2537</a></li>
+<li><a href="https://meigit.readthedocs.io/en/latest/gitlab_ci_.gitlab-ci.yml_detail.html" target="_blank" rel="noopener">https://meigit.readthedocs.io/en/latest/gitlab_ci_.gitlab-ci.yml_detail.html</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2020/03/18/web-develope-md/">web_develope.md</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-03-18
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/技术/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h1 id="记录平时开发遇到的问题，及解决办法。"><a href="#记录平时开发遇到的问题，及解决办法。" class="headerlink" title="记录平时开发遇到的问题，及解决办法。"></a>记录平时开发遇到的问题，及解决办法。</h1><ol>
+<li>当宽度width:100%时，padding-right不起作用。</li>
+</ol>
+<ul>
+<li>解决办法：增加box-sizing: border-box;</li>
+</ul>
+<ol>
+<li>动态绑定图片<br><code>imageSrc: function () {
+   return require(`@/assets/icons/${this.icon}`)
+ }</code>    </li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2019/10/25/flutter-plugin-introducation-md1/">浅谈Flutter插件(一)</a>
         
       </h1>
@@ -246,85 +351,7 @@
           <h1 id="Flutter插件原理浅谈"><a href="#Flutter插件原理浅谈" class="headerlink" title="Flutter插件原理浅谈"></a>Flutter插件原理浅谈</h1><h2 id="Platform-Channel"><a href="#Platform-Channel" class="headerlink" title="Platform Channel"></a>Platform Channel</h2><ol>
 <li>Platform Channel是Flutter端与Platform端指定的通信机制，它分为三种:<br>(1) BasicMessageChannel: 用于传递字符串和半结构化的信息(在大内存数据块传递的情况下使用)。<br> (2) MethodChannel: 用于传递方法的调用（method invocation）。<br> (3) EventChannel:用于数据流（event streams）的通信。</li>
 </ol>
-<h2 id="消息传递与编解码器"><a href="#消息传递与编解码器" class="headerlink" title="消息传递与编解码器"></a>消息传递与编解码器</h2><p>   <img src="/image/flutter_plugin5.jpg" alt="avatar"><br>   从图中可以看出，不同的Handler对应不同的消息通道。<br>   其中，中间通信的消息都是编码的二进制格式形式，需要通过消息解码器进行处理。<br>   编码分为两种：MessageCodec 和MethodCodec。其中，MessageCodec包括BinaryCodec， StringCodec，JSONMesageCodec和 StandardMessageCodec,<br>   MethodCodec包括JSONMethodCodec 和 StandardMethodCodec。</p>
-<h2 id="Plaffrom-数据类型支持"><a href="#Plaffrom-数据类型支持" class="headerlink" title="Plaffrom 数据类型支持"></a>Plaffrom 数据类型支持</h2><p>   Flutter默认的消息编码器（StandardMessageCodec）,目前支持的数据类型如下：</p>
-<table>
-<thead>
-<tr>
-<th>Dart</th>
-<th>Android</th>
-<th>IOS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>null</td>
-<td>null</td>
-<td>nil(NSNull when nested)</td>
-</tr>
-<tr>
-<td>bool</td>
-<td>Java.lang.Boolean</td>
-<td>NSNumber numberWithBool:</td>
-</tr>
-<tr>
-<td>int</td>
-<td>Java.lang.Integer</td>
-<td>NSNumber numberWithInt:</td>
-</tr>
-<tr>
-<td>int</td>
-<td>Java.lang.Long</td>
-<td>NSNumber numberWithLong:</td>
-</tr>
-<tr>
-<td>double</td>
-<td>Java.lang.Double</td>
-<td>NSNumber numberWithDouble:</td>
-</tr>
-<tr>
-<td>String</td>
-<td>Java.lang.String</td>
-<td>NSSttring</td>
-</tr>
-<tr>
-<td>Unit8List</td>
-<td>byte[]</td>
-<td>FlutterStandardTypedData typedDataWithBytes:</td>
-</tr>
-<tr>
-<td>int32List</td>
-<td>int[]</td>
-<td>FlutterStandardTypedData typedDataWithInt32:</td>
-</tr>
-<tr>
-<td>int64List</td>
-<td>long[]</td>
-<td>FlutterStandardTypedData typedDataWithInt64:</td>
-</tr>
-<tr>
-<td>Float64List</td>
-<td>double[]</td>
-<td>FlutterStandardTypedData typedDataWithFloat64:</td>
-</tr>
-<tr>
-<td>List</td>
-<td>java.util.ArrayList</td>
-<td>NSArray</td>
-</tr>
-<tr>
-<td>Map</td>
-<td>java.util.HashMap</td>
-<td>NSDictionary</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Flutter插件原理分析"><a href="#Flutter插件原理分析" class="headerlink" title="Flutter插件原理分析"></a>Flutter插件原理分析</h2><ol>
-<li><p>下面针对PlatfromChannel进行说明，为了更好的举例，下面先展出示例代码。</p>
-<ul>
-<li><p>Dart端代码<br><img src="/image/flutter_plugin2.jpg" alt="avatar"></p>
-</li>
-<li><p>android端原生代码<br><img src="/image/flutter_plugin1.jpg" alt="avatar"></p>
+<h2 id="消息传递与编解码器"><a href="#消息传递与编解码器" class="headerlink" title="消息传递与编解码器"></a>消息传递与编解码器</h2><p>   <img src="/image/flutter_plugin5.jpg" alt="avatar"><br>   从图中可以看出，不同的Handler对应不同的消息通道。<br>   其中，中间通信的消息都是编码的二进制格式形式，需要通过消息解码器进行处理。<br>   编码分为两种：MessageCodec 和MethodCodec。其中，MessageCodec包括BinaryCodec， StringCodec，JSONMesageCodec和 StandardMessageCodec,<br>   MethodCodec包括JSONMethodCodec 和 StandardMethodCodec。<br>
           <div class="read-more">
             <a href="/2019/10/25/flutter-plugin-introducation-md1/" class="read-more-link">阅读更多</a>
           </div>
@@ -379,6 +406,21 @@
 <li><a href="http://flutter.link/" target="_blank" rel="noopener">http://flutter.link/</a></li>
 <li><a href="https://blog.csdn.net/sinat_17775997/article/details/95471809" target="_blank" rel="noopener">https://blog.csdn.net/sinat_17775997/article/details/95471809</a></li>
 <li><a href="https://fenews.org/" target="_blank" rel="noopener">https://fenews.org/</a></li>
+<li><a href="https://www.ccarea.cn/archives/708" target="_blank" rel="noopener">https://www.ccarea.cn/archives/708</a></li>
+<li><a href="https://blog.csdn.net/u010164190/article/details/78552155" target="_blank" rel="noopener">https://blog.csdn.net/u010164190/article/details/78552155</a></li>
+<li><a href="http://helloweb.wang/qianduankaifa/552.html" target="_blank" rel="noopener">http://helloweb.wang/qianduankaifa/552.html</a></li>
+<li><a href="https://www.cnblogs.com/hlwyfeng/p/5222391.html" target="_blank" rel="noopener">https://www.cnblogs.com/hlwyfeng/p/5222391.html</a> (已经阅读)</li>
+<li><a href="https://meandni.com/" target="_blank" rel="noopener">https://meandni.com/</a></li>
+<li><a href="https://css-tricks.com/an-introduction-and-guide-to-the-css-object-model-cssom/" target="_blank" rel="noopener">https://css-tricks.com/an-introduction-and-guide-to-the-css-object-model-cssom/</a></li>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions//hh781509(v=vs.85)?redirectedfrom=MSDN" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/previous-versions//hh781509(v=vs.85)?redirectedfrom=MSDN</a></li>
+<li><a href="https://www.jianshu.com/p/97a0694dae68" target="_blank" rel="noopener">https://www.jianshu.com/p/97a0694dae68</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1540523" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1540523</a></li>
+<li><a href="https://github.com/JsonChao/Awesome-Android-Interview/blob/master/Android%E7%9B%B8%E5%85%B3/Android%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.md" target="_blank" rel="noopener">https://github.com/JsonChao/Awesome-Android-Interview/blob/master/Android%E7%9B%B8%E5%85%B3/Android%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.md</a></li>
+<li><a href="https://github.com/dypsilon/frontend-dev-bookmarks" target="_blank" rel="noopener">https://github.com/dypsilon/frontend-dev-bookmarks</a></li>
+<li><a href="https://blog.dreamtobe.cn/android_d8_r8/" target="_blank" rel="noopener">https://blog.dreamtobe.cn/android_d8_r8/</a></li>
+<li><a href="https://blog.dreamtobe.cn/" target="_blank" rel="noopener">https://blog.dreamtobe.cn/</a></li>
+<li><a href="https://www.rrfed.com/category/basic/" target="_blank" rel="noopener">https://www.rrfed.com/category/basic/</a></li>
+<li><a href="https://juejin.im/post/6844903741183754253" target="_blank" rel="noopener">https://juejin.im/post/6844903741183754253</a></li>
 </ol>
 
         
@@ -807,7 +849,7 @@
      
       2015 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

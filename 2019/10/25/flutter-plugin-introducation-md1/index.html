@@ -237,7 +237,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter插件原理浅谈"><span class="toc-text">Flutter插件原理浅谈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Platform-Channel"><span class="toc-text">Platform Channel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息传递与编解码器"><span class="toc-text">消息传递与编解码器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plaffrom-数据类型支持"><span class="toc-text">Plaffrom 数据类型支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件原理分析"><span class="toc-text">Flutter插件原理分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flutter插件原理浅谈"><span class="toc-text">Flutter插件原理浅谈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Platform-Channel"><span class="toc-text">Platform Channel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息传递与编解码器"><span class="toc-text">消息传递与编解码器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plaffrom-数据类型支持"><span class="toc-text">Plaffrom 数据类型支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件调用流程图"><span class="toc-text">Flutter插件调用流程图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter插件原理分析"><span class="toc-text">Flutter插件原理分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -247,7 +247,7 @@
         <h1 id="Flutter插件原理浅谈"><a href="#Flutter插件原理浅谈" class="headerlink" title="Flutter插件原理浅谈"></a>Flutter插件原理浅谈</h1><h2 id="Platform-Channel"><a href="#Platform-Channel" class="headerlink" title="Platform Channel"></a>Platform Channel</h2><ol>
 <li>Platform Channel是Flutter端与Platform端指定的通信机制，它分为三种:<br>(1) BasicMessageChannel: 用于传递字符串和半结构化的信息(在大内存数据块传递的情况下使用)。<br> (2) MethodChannel: 用于传递方法的调用（method invocation）。<br> (3) EventChannel:用于数据流（event streams）的通信。</li>
 </ol>
-<h2 id="消息传递与编解码器"><a href="#消息传递与编解码器" class="headerlink" title="消息传递与编解码器"></a>消息传递与编解码器</h2><p>   <img src="/image/flutter_plugin5.jpg" alt="avatar"><br>   从图中可以看出，不同的Handler对应不同的消息通道。<br>   其中，中间通信的消息都是编码的二进制格式形式，需要通过消息解码器进行处理。<br>   编码分为两种：MessageCodec 和MethodCodec。其中，MessageCodec包括BinaryCodec， StringCodec，JSONMesageCodec和 StandardMessageCodec,<br>   MethodCodec包括JSONMethodCodec 和 StandardMethodCodec。</p>
+<h2 id="消息传递与编解码器"><a href="#消息传递与编解码器" class="headerlink" title="消息传递与编解码器"></a>消息传递与编解码器</h2><p>   <img src="/image/flutter_plugin5.jpg" alt="avatar"><br>   从图中可以看出，不同的Handler对应不同的消息通道。<br>   其中，中间通信的消息都是编码的二进制格式形式，需要通过消息解码器进行处理。<br>   编码分为两种：MessageCodec 和MethodCodec。其中，MessageCodec包括BinaryCodec， StringCodec，JSONMesageCodec和 StandardMessageCodec,<br>   MethodCodec包括JSONMethodCodec 和 StandardMethodCodec。<br><a id="more"></a></p>
 <h2 id="Plaffrom-数据类型支持"><a href="#Plaffrom-数据类型支持" class="headerlink" title="Plaffrom 数据类型支持"></a>Plaffrom 数据类型支持</h2><p>   Flutter默认的消息编码器（StandardMessageCodec）,目前支持的数据类型如下：</p>
 <table>
 <thead>
@@ -320,13 +320,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="Flutter插件调用流程图"><a href="#Flutter插件调用流程图" class="headerlink" title="Flutter插件调用流程图"></a>Flutter插件调用流程图</h2><p>  <img src="/image/flutter_plugin6.jpg" alt="avatar"><br>  备注：Android侧没有画出，是由于StartUML工具在画时序图时，无法调整序号。</p>
 <h2 id="Flutter插件原理分析"><a href="#Flutter插件原理分析" class="headerlink" title="Flutter插件原理分析"></a>Flutter插件原理分析</h2><ol>
 <li><p>下面针对PlatfromChannel进行说明，为了更好的举例，下面先展出示例代码。</p>
 <ul>
 <li><p>Dart端代码<br><img src="/image/flutter_plugin2.jpg" alt="avatar"></p>
 </li>
 <li><p>android端原生代码<br><img src="/image/flutter_plugin1.jpg" alt="avatar"></p>
-<a id="more"></a></li>
+</li>
 </ul>
 </li>
 <li><p>下面先从Flutter端开始说起</p>
@@ -448,6 +449,12 @@
         
   <nav class="post-nav">
     
+      <a class="prev" href="/2020/03/18/web-develope-md/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">web_develope.md</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
     
       <a class="next" href="/2019/09/12/todoList/">
         <span class="next-text nav-default">todoList</span>
@@ -523,7 +530,7 @@
      
       2015 - 
     
-    2019
+    2020
 
     <span class="heart">
       <i class="iconfont icon-heart"></i>

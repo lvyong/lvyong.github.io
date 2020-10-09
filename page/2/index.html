@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="lvyong.github.io/archives/2019/09/"/>
+<link rel="canonical" href="lvyong.github.io/page/2/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,11 +77,7 @@
 
 
 
-    <title>
-  
-    归档 - lvyong
-  
-</title>
+    <title> lvyong </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -210,52 +206,144 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  
-  <section id="archive" class="archive">
+  <section id="posts" class="posts">
     
       
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            目前共计 12 篇日志
-          </span>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/02/26/mysql/">mysql</a>
+        
+      </h1>
 
-    
-      
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-26
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/技术/">技术</a>
+            
+          </div>
         
         
+      </div>
+    </header>
 
+    
+    
+
+    <div class="post-content">
+      
+        
         
           
-          <div class="collection-title">
-            <h2 class="archive-year">2019</h2>
+        
+
+        
+          <h3 id="导出导入数据"><a href="#导出导入数据" class="headerlink" title="导出导入数据"></a>导出导入数据</h3><ol>
+<li><p>导出所有数据库<br>该命令会导出包括系统数据库在内的所有数据库<br><code>mysqldump -uroot -proot --all-databases &gt;all.sql</code></p>
+</li>
+<li><p>导出db1, db2两个数据库的所有数据<br><code>mysqldump -uroot -proot --databases db1 db2 &gt;twodbs.sql</code></p>
+</li>
+<li><p>导出db1中的a1、a2表<br><code>mysqldump -uroot -proot --databases db1 --tables a1 a2 &gt;twotables.sql</code></p>
+</li>
+<li><p>导出db1库中表a1中id=1的数据<br><code>mysqldump -uroot -proot --databases db1 --tables a1 --where=&#39;id=1&#39;</code></p>
+</li>
+<li><p>只导出表结构不导出数据<br><code>mysqldump -uroot -proot --no-data --databases db1 &gt;my.sql</code></p>
+</li>
+<li><p>跨服务器导出导入数据,-C启用压缩传送<br><code>mysqldump --host=h1 -uroot -proot -C  --databases db1 |mysql --host=h2
+-uroot -proot db2</code>    </p>
+</li>
+</ol>
+          <div class="read-more">
+            <a href="/2018/02/26/mysql/" class="read-more-link">阅读更多</a>
           </div>
         
       
+    </div>
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            09-12
-          
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/02/12/web¹¤³ÌÖÐÓöµ½µÄÎÊÌâ/">搭建java web工程中遇到的问题</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-12
         </span>
-        <span class="archive-post-title">
-          <a href="/2019/09/12/todoList/" class="archive-post-link">
-            todoList
-          </a>
-        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/技术/">技术</a>
+            
+          </div>
+        
+        
       </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><blockquote>
+<p>&nbsp;前一段时间，我第一次尝试进行Java Web开发。需要将原来工程中的旧es(Elasticsearch)<br>服务相关的代码，替换成使用JDBC template方式。一开始，我直接在工程中进行开发，参考同事发给我的demo。我将其它涉及到的3个library引入到工程的pom.xml文件中。这个工程本地不能运行，需要发布到线上环境。我这边将工程打包成war文件，部署到线上tomcat容器下，结果运行发现，查询数据的接口没有响应，也没有错误日志打印。我排查了es相关的配置文件，发现配置文件没有问题。</p>
+</blockquote>
+<h3 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h3><pre><code>1. 为了排查此问题，我重新创建了一个Test工程。写了一个简单的测试接口，也在此工程中的pom.xml文件中，
+   引入了那三个库，及原来的es库。并且复制es配置文件到此工程。最后打成war包，部署到线上环境，发现
+   还是一样的问题，接口没有响应。
+
+2. 通过上面的测试，我肯定工程中的逻辑代码应该没有问题，问题可能出现在jar包的引入方面。我通过与同事
+   发给我的demo工程相比较，发现我的工程中的es的版本比较低。我替换成demo工程中的es版本，重新发布上线，
+   发现接口可以走通了。   
+</code></pre>
+          <div class="read-more">
+            <a href="/2018/02/12/web¹¤³ÌÖÐÓöµ½µÄÎÊÌâ/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
     
   </section>
 
   
   <nav class="pagination">
     
+      <a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">上一页</span>
+      </a>
+    
     
   </nav>
-
 
 
           </div>

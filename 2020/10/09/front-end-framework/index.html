@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="front_end_framework"/>
+
+
+
+
+  <meta name="keywords" content="前端, lvyong" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="lvyong" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="https://lvyong.github.io/2020/10/09/front-end-framework/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> front_end_framework - lvyong </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">lvyong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about/">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">lvyong</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          front_end_framework
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-10-09
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#IceCream"><span class="toc-text">IceCream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ingrid"><span class="toc-text">Ingrid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ink"><span class="toc-text">Ink</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inuit-css"><span class="toc-text">inuit.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IVORY-Framework"><span class="toc-text">IVORY Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jeet"><span class="toc-text">Jeet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kaliber"><span class="toc-text">Kaliber</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kickoff"><span class="toc-text">Kickoff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kube"><span class="toc-text">Kube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Layers"><span class="toc-text">Layers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lovely-CSS-Framework"><span class="toc-text">Lovely CSS Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Malo"><span class="toc-text">Malo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Material-Design-Lite"><span class="toc-text">Material Design Lite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Materialize-CSS"><span class="toc-text">Materialize CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Milligram"><span class="toc-text">Milligram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mini-css"><span class="toc-text">mini.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#minigrid"><span class="toc-text">minigrid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Picnic-CSS"><span class="toc-text">Picnic CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Polymer"><span class="toc-text">Polymer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PureCSS"><span class="toc-text">PureCSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ResponsiveBP"><span class="toc-text">ResponsiveBP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Responsive-Grid-System"><span class="toc-text">Responsive Grid System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Responsive-GS"><span class="toc-text">Responsive GS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ribs"><span class="toc-text">Ribs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROCSSTI"><span class="toc-text">RÖCSSTI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Semantic-UI"><span class="toc-text">Semantic UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sierra"><span class="toc-text">Sierra</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skeleton"><span class="toc-text">Skeleton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spectre-css"><span class="toc-text">Spectre.css</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StackLayout"><span class="toc-text">StackLayout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Susy"><span class="toc-text">Susy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Taiga-Boilerplate"><span class="toc-text">Taiga Boilerplate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tailwind-CSS"><span class="toc-text">Tailwind CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TentCSS"><span class="toc-text">TentCSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Golden-Grid"><span class="toc-text">The Golden Grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UIkit"><span class="toc-text">UIkit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Unsemantic"><span class="toc-text">Unsemantic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vanilla-Framework"><span class="toc-text">Vanilla Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wing"><span class="toc-text">Wing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Workless"><span class="toc-text">Workless</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xCSS"><span class="toc-text">xCSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#YACSS"><span class="toc-text">YACSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#YAML"><span class="toc-text">YAML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#YUI-CSS"><span class="toc-text">YUI CSS</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://github.com/cbrauckmuller/helium">https://github.com/cbrauckmuller/helium</a></p>
+<h2 id="IceCream"><a href="#IceCream" class="headerlink" title="IceCream"></a>IceCream</h2><blockquote>
+<p>Simple and light responsive grid system</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://html5-ninja.com/icecream">http://html5-ninja.com/icecream</a></p>
+<span id="more"></span>
+
+<h2 id="Ingrid"><a href="#Ingrid" class="headerlink" title="Ingrid"></a>Ingrid</h2><blockquote>
+<p>A fluid CSS layout system.</p>
+</blockquote>
+<p>Ingrid is a lightweight and fluid CSS layout system, whose main goal is to reduce the use of classes on individual units. In general, it is fluid, lightweight and extendable.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://piira.se/projects/ingrid/">http://piira.se/projects/ingrid/</a></p>
+<h2 id="Ink"><a href="#Ink" class="headerlink" title="Ink"></a>Ink</h2><blockquote>
+<p>Ink is a set of tools for quick development of web interfaces.</p>
+</blockquote>
+<p>It offers a fluid and responsive grid, common interface elements, interactive components, a design-first approach with ease of use and simplicity at its core. Start integrating Ink in your projects and remove the hassle of building the basics, staying free to focus on what’s important.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://ink.sapo.pt/">http://ink.sapo.pt/</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="http://github.com/sapo/ink/">http://github.com/sapo/ink/</a></p>
+<h2 id="inuit-css"><a href="#inuit-css" class="headerlink" title="inuit.css"></a>inuit.css</h2><blockquote>
+<p>A powerful, scalable, Sass-based, <a target="_blank" rel="noopener" href="http://bem.info/">BEM</a>, OOCSS framework.</p>
+</blockquote>
+<p>inuit.css is a Sass based, Object Oriented framework that is full of objects and abstractions. inuit.css provides little-to-no design which means no undoing things, no deleting CSS and no adhering to other peoples’ design decisions.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://inuitcss.com/">http://inuitcss.com/</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/csswizardry/inuit.css/">https://github.com/csswizardry/inuit.css/</a></p>
+<h2 id="IVORY-Framework"><a href="#IVORY-Framework" class="headerlink" title="IVORY Framework"></a>IVORY Framework</h2><blockquote>
+<p>Simple, Flexible, Powerful</p>
+</blockquote>
+<p>Responsive front-end web framework. Makes your front-end development faster and easier. Takes you all theway from 1200PX on down to 320PX.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/kanthvallampati/IVORY">https://github.com/kanthvallampati/IVORY</a></p>
+<h2 id="Jeet"><a href="#Jeet" class="headerlink" title="Jeet"></a>Jeet</h2><blockquote>
+<p>A CSS Grid System for Humans</p>
+</blockquote>
+<p>Jeet allows you to express your page grid the same way a human would describe it. No more needlessly nesting elements. No more rigid twelve column rules. Enjoy building faster with less code, and more flexibility with Jeet.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://jeet.gs/">http://jeet.gs/</a></p>
+<h2 id="Kaliber"><a href="#Kaliber" class="headerlink" title="Kaliber"></a>Kaliber</h2><blockquote>
+<p>A tiny but powerful CSS framework based on Flexbox.</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://robbinfellow.github.io/kaliber/">https://robbinfellow.github.io/kaliber/</a></p>
+<h2 id="Kickoff"><a href="#Kickoff" class="headerlink" title="Kickoff"></a>Kickoff</h2><blockquote>
+<p>A lightweight front-end framework for creating scalable, responsive sites</p>
+</blockquote>
+<p>Kickoff is an actively maintained front-end framework, created by Zander Martineau and Ashley Nolan.</p>
+<p>The framework is not meant to be too prescriptive - we don’t want to force developers into a certain coding style - and so can be used as a starting point for any type of project.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://trykickoff.com/">http://trykickoff.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/trykickoff/kickoff">https://github.com/trykickoff/kickoff</a></p>
+<h2 id="Kube"><a href="#Kube" class="headerlink" title="Kube"></a>Kube</h2><blockquote>
+<p>CSS-framework for professional developers.</p>
+</blockquote>
+<p>Minimal and enough. Adaptive and responsive. Revolution grid and beautiful typography. No imposed styles and freedom.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://imperavi.com/kube/">http://imperavi.com/kube/</a></p>
+<h2 id="Layers"><a href="#Layers" class="headerlink" title="Layers"></a>Layers</h2><blockquote>
+<p>Lightweight. Unobtrusive. Style-agnostic. Build your look on the web, not Twitter’s – and build it fluid.</p>
+</blockquote>
+<p>Layers CSS is aimed for practical use and comes with zero bullshit.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://eiskis.net/layers/">http://eiskis.net/layers/</a></p>
+<p><strong>Bitbucket:</strong> <a target="_blank" rel="noopener" href="https://bitbucket.org/Eiskis/layers-css/src/tip/source/layers/">https://bitbucket.org/Eiskis/layers-css/src/tip/source/layers/</a></p>
+<h2 id="Lovely-CSS-Framework"><a href="#Lovely-CSS-Framework" class="headerlink" title="Lovely CSS Framework"></a>Lovely CSS Framework</h2><blockquote>
+<p>The Lovely CSS Framework is a simple and straight forward way to easily deploy an XHTML/CSS site.</p>
+</blockquote>
+<p>Based on a simple 960px wide grid system, featuring multiple column layouts, and various pluggable add-ons.</p>
+<p><strong>Responsive:</strong> No</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://code.google.com/p/lovely-css/">http://code.google.com/p/lovely-css/</a></p>
+<h2 id="Malo"><a href="#Malo" class="headerlink" title="Malo"></a>Malo</h2><blockquote>
+<p>Malo is ultra small css library for building web sites.</p>
+</blockquote>
+<p>Malo is ultra small css library for building web sites. It is meant to be structural base for small or medium web sites. Malo derives from it’s bigger brother Emastic CSS Framework.</p>
+<p><strong>Responsive:</strong> No</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://code.google.com/p/malo/">http://code.google.com/p/malo/</a></p>
+<h2 id="Material-Design-Lite"><a href="#Material-Design-Lite" class="headerlink" title="Material Design Lite"></a>Material Design Lite</h2><blockquote>
+<p>An implementation of Material Design components in vanilla CSS, JS, and HTML</p>
+</blockquote>
+<p>Material Design Lite (MDL) lets you add a Material Design look and feel to your static content websites. It doesn’t rely on any JavaScript frameworks or libraries. Optimized for cross-device use, gracefully degrades in older browsers, and offers an experience that is accessible from the get-go.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://www.getmdl.io/">http://www.getmdl.io</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/google/material-design-lite">https://github.com/google/material-design-lite</a></p>
+<h2 id="Materialize-CSS"><a href="#Materialize-CSS" class="headerlink" title="Materialize CSS"></a>Materialize CSS</h2><blockquote>
+<p>Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology.<br>  Google’s goal is to develop a system of design that allows for a unified user experience across all their products on any platform.</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://materializecss.com/">http://materializecss.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/Dogfalo/materialize">https://github.com/Dogfalo/materialize</a></p>
+<h2 id="Milligram"><a href="#Milligram" class="headerlink" title="Milligram"></a>Milligram</h2><blockquote>
+<p>Milligram provides a minimal setup of styles for a fast and clean starting point. Just it! Only 2kb gzipped! It’s not about a UI framework. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code.</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://milligram.github.io/">http://milligram.github.io</a></p>
+<h2 id="mini-css"><a href="#mini-css" class="headerlink" title="mini.css"></a>mini.css</h2><blockquote>
+<p>A minimal, responsive, style-agnostic CSS framework!</p>
+</blockquote>
+<p>mini.css tries to provide as much functionality as possible in under 7KB gzipped, while mainting a mobile-friendly approach and allowing you to customize it any way you want.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://chalarangelo.github.io/mini.css/">https://chalarangelo.github.io/mini.css/</a></p>
+<h2 id="minigrid"><a href="#minigrid" class="headerlink" title="minigrid"></a>minigrid</h2><blockquote>
+<p>Minimal 2kb zero dependency cascading grid layout</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/henriquea/minigrid">https://github.com/henriquea/minigrid</a></p>
+<h2 id="Picnic-CSS"><a href="#Picnic-CSS" class="headerlink" title="Picnic CSS"></a>Picnic CSS</h2><blockquote>
+<p>Lightweight and beautiful library</p>
+</blockquote>
+<p>A beautiful CSS library to kickstart your projects.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://picnicss.com/">https://picnicss.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/franciscop/picnic">https://github.com/franciscop/picnic</a></p>
+<h2 id="Polymer"><a href="#Polymer" class="headerlink" title="Polymer"></a>Polymer</h2><blockquote>
+<p>A library for creating Web Components based on Material Design</p>
+</blockquote>
+<p>Polymer is a library for creating Web Components, which are a set of W3C standards and upcoming browser APIs for defining your own custom HTML elements. With the help of polyfills and sugar, it can create these custom elements and bring Web Component support to browsers that don’t play nice with the standard just yet.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://www.polymer-project.org/">https://www.polymer-project.org</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/Polymer/polymer">https://github.com/Polymer/polymer</a></p>
+<h2 id="PureCSS"><a href="#PureCSS" class="headerlink" title="PureCSS"></a>PureCSS</h2><blockquote>
+<p>A set of small, responsive CSS modules that you can use in every web project, built by the YUI team at Yahoo!.</p>
+</blockquote>
+<p>PureCSS is a collection of responsive ‘drop-ins’ built with - you guessed it! - pure CSS! The PureCSS website also has a skin builder on their website, so you’re restricted by default colors no more.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://purecss.io/">http://purecss.io/</a></p>
+<h2 id="ResponsiveBP"><a href="#ResponsiveBP" class="headerlink" title="ResponsiveBP"></a>ResponsiveBP</h2><blockquote>
+<p>Responsive A powerful, accessible, developer friendly framework for building responsive websites</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://responsivebp.com/">http://responsivebp.com/</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/responsivebp/responsive/">https://github.com/responsivebp/responsive/</a></p>
+<h2 id="Responsive-Grid-System"><a href="#Responsive-Grid-System" class="headerlink" title="Responsive Grid System"></a>Responsive Grid System</h2><blockquote>
+<p>Spectacularly Easy Responsive Design</p>
+</blockquote>
+<p>It’s a quick, easy &amp; flexible way to create a responsive web site.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://www.responsivegridsystem.com/">http://www.responsivegridsystem.com/</a></p>
+<h2 id="Responsive-GS"><a href="#Responsive-GS" class="headerlink" title="Responsive GS"></a>Responsive GS</h2><blockquote>
+<p>Simple CSS framework for fast, intuitive development of responsive websites.</p>
+</blockquote>
+<p>Built using the ‘Mobile First’ approach, ‘clearfix’ for clearing floats, box-sizing: border-box for adding additional padding to elements, and weighs less then 1kb compressed.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://responsive.gs/">http://responsive.gs/</a></p>
+<h2 id="Ribs"><a href="#Ribs" class="headerlink" title="Ribs"></a>Ribs</h2><blockquote>
+<p>The evolution of Skeleton: A Beautiful Boilerplate for Responsive, Mobile-Friendly Development.</p>
+</blockquote>
+<p>Ribs is a modernised, maintained and feature rich fork of the original Skeleton framework.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://github.com/nickpack/Ribs">https://github.com/nickpack/Ribs</a></p>
+<h2 id="ROCSSTI"><a href="#ROCSSTI" class="headerlink" title="RÖCSSTI"></a>RÖCSSTI</h2><p>RÖCSSTI is a CSS micro-framework which includes accessibility notions, typo settings, IE fixes, reusable classes, ect. It is the little brother of <a target="_blank" rel="noopener" href="http://www.knacss.com/">KNACSS</a>. It also has LESS and Sass versions.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://rocssti.nicolas-hoffmann.net/">http://rocssti.nicolas-hoffmann.net/</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/nico3333fr/ROCSSTI">https://github.com/nico3333fr/ROCSSTI</a></p>
+<h2 id="Semantic-UI"><a href="#Semantic-UI" class="headerlink" title="Semantic UI"></a>Semantic UI</h2><blockquote>
+<p>UI is the vocabulary of the web.</p>
+</blockquote>
+<p>Semantic is a UI component framework based around useful principles from natural language.</p>
+<p>Semantic allows developers to build beautiful websites fast, with concise HTML, intuitive javascript, and simplified debugging, helping make front-end development a delightful experience. Semantic is responsively designed allowing your website to scale on multiple devices. Semantic is production ready and partnered with frameworks such as React, Angular, Meteor, and Ember, which means you can integrate it with any of these frameworks to organize your UI layer alongside your application logic.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://semantic-ui.com/">http://semantic-ui.com/</a></p>
+<p><strong>Github:</strong>  <a target="_blank" rel="noopener" href="https://github.com/Semantic-Org/Semantic-UI">https://github.com/Semantic-Org/Semantic-UI</a></p>
+<h2 id="Sierra"><a href="#Sierra" class="headerlink" title="Sierra"></a>Sierra</h2><blockquote>
+<p>The smallest and lightest scss library</p>
+</blockquote>
+<p> Sierra is a micro SCSS library to help you build websites in a matter of seconds, without all the arbitrary selectors.</p>
+<p> <strong>Responsive:</strong> Yes</p>
+<p> <strong>Website:</strong> <a target="_blank" rel="noopener" href="http://sierra-library.github.io/">http://sierra-library.github.io/</a></p>
+<h2 id="Skeleton"><a href="#Skeleton" class="headerlink" title="Skeleton"></a>Skeleton</h2><blockquote>
+<p>A Beautiful Boilerplate for Responsive, Mobile-Friendly Development.</p>
+</blockquote>
+<p>Skeleton is a small collection of CSS files that can help you rapidly develop sites that look beautiful at any size, be it a 17” laptop screen or an iPhone.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://www.getskeleton.com/">http://www.getskeleton.com/</a></p>
+<h2 id="Spectre-css"><a href="#Spectre-css" class="headerlink" title="Spectre.css"></a>Spectre.css</h2><blockquote>
+<p>Lightweight, Responsive and Modern</p>
+</blockquote>
+<p>A lightweight, responsive and modern CSS framework for faster and extensible development.</p>
+<p><strong>Responsive</strong> Yes</p>
+<p><strong>Website</strong> <a target="_blank" rel="noopener" href="http://picturepan2.github.io/spectre/?utm_source=next.36kr.com">http://picturepan2.github.io/spectre/?utm_source=next.36kr.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/picturepan2/spectre.git">https://github.com/picturepan2/spectre.git</a></p>
+<h2 id="StackLayout"><a href="#StackLayout" class="headerlink" title="StackLayout"></a>StackLayout</h2><blockquote>
+<p>A flexible width, component based CSS layout system</p>
+</blockquote>
+<p>StackLayout makes it incredibly easy to use semantic class names for particular areas of your site, such as the main navigation or a thumbnail gallery, or for the entire site as part of your deployment process.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/camslice/StackLayout">https://github.com/camslice/StackLayout</a></p>
+<h2 id="Susy"><a href="#Susy" class="headerlink" title="Susy"></a>Susy</h2><blockquote>
+<p>Your markup. Your design. Our math.</p>
+</blockquote>
+<p>The web is a responsive place, from your lithe &amp; lively development process to your end-user’s super-tablet-multi-magic-lap-phone. You need grids that are powerful yet custom, reliable yet responsive.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://susy.oddbird.net/">http://susy.oddbird.net/</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/ericam/susy/">https://github.com/ericam/susy/</a></p>
+<h2 id="Taiga-Boilerplate"><a href="#Taiga-Boilerplate" class="headerlink" title="Taiga Boilerplate"></a>Taiga Boilerplate</h2><blockquote>
+<p>Taiga, a head start for UI engineers</p>
+</blockquote>
+<p>Taiga Boilerplate is a small HTML/SASS framework for starting a new web project. It is mobile-first with a semantic SASS grid and based on the principles of SMACSS and BEM.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://taigaboilerplate.com/">http://taigaboilerplate.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/studiowolf/taiga-boilerplate">https://github.com/studiowolf/taiga-boilerplate</a></p>
+<h2 id="Tailwind-CSS"><a href="#Tailwind-CSS" class="headerlink" title="Tailwind CSS"></a>Tailwind CSS</h2><blockquote>
+<p>A Utility-First CSS Framework for Rapid UI Development</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://tailwindcss.com/">https://tailwindcss.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/tailwindcss/tailwindcss">https://github.com/tailwindcss/tailwindcss</a></p>
+<h2 id="TentCSS"><a href="#TentCSS" class="headerlink" title="TentCSS"></a>TentCSS</h2><blockquote>
+<p>A CSS survival kit. </p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://css.sitetent.com/">https://css.sitetent.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/sitetent/tentcss">https://github.com/sitetent/tentcss</a></p>
+<h2 id="The-Golden-Grid"><a href="#The-Golden-Grid" class="headerlink" title="The Golden Grid"></a>The Golden Grid</h2><p>The Golden Grid is a web grid system. It ‘s a product of the search for the perfect modern grid system. It ‘s meant to be a CSS tool for grid based web sites.</p>
+<p><strong>Responsive:</strong> No</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://code.google.com/p/the-golden-grid/">http://code.google.com/p/the-golden-grid/</a></p>
+<h2 id="UIkit"><a href="#UIkit" class="headerlink" title="UIkit"></a>UIkit</h2><p>A lightweight and modular front-end framework for developing fast and powerful web interfaces.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://www.getuikit.com/">http://www.getuikit.com</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/uikit">https://github.com/uikit</a></p>
+<h2 id="Unsemantic"><a href="#Unsemantic" class="headerlink" title="Unsemantic"></a>Unsemantic</h2><p>Unsemantic is a fluid grid system that is the successor to the <a target="_blank" rel="noopener" href="http://960.gs/">960 Grid System</a>. It works in a similar way, but instead of being a set number of columns, it’s entirely based on percentages.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://unsemantic.com/">http://unsemantic.com/</a></p>
+<h2 id="Vanilla-Framework"><a href="#Vanilla-Framework" class="headerlink" title="Vanilla Framework"></a>Vanilla Framework</h2><blockquote>
+<p>Vanilla is a simple extensible CSS framework, written in Sass, by the Ubuntu Web Team.</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://vanillaframework.io/">https://vanillaframework.io</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/vanilla-framework/vanilla-framework">https://github.com/vanilla-framework/vanilla-framework</a></p>
+<h2 id="Wing"><a href="#Wing" class="headerlink" title="Wing"></a>Wing</h2><blockquote>
+<p>A beautiful CSS framework designed for minimalists.</p>
+</blockquote>
+<p>Everything you need to create a basic project is included, all in a 2kb file (minified + gzipped). On top of that, almost everything is styled automatically, without the need for learning specific classes. This allows for an intuitive experience developing with Wing, as it’s designed to be a boilerplate stylesheet for any project.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://kbrsh.github.io/wing">https://kbrsh.github.io/wing</a></p>
+<h2 id="Workless"><a href="#Workless" class="headerlink" title="Workless"></a>Workless</h2><blockquote>
+<p>A clean &amp; classy HTML5, CSS3 framework</p>
+</blockquote>
+<p>Standardizes CSS, improves usability and interaction, sets base typography to help vertical rhythm and readability and adds helper classes to style elements easily.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://workless.ikreativ.com/">http://workless.ikreativ.com/</a></p>
+<h2 id="xCSS"><a href="#xCSS" class="headerlink" title="xCSS"></a>xCSS</h2><blockquote>
+<p>Object-Oriented CSS Framework</p>
+</blockquote>
+<p>xCSS bases on CSS and empowers a straightforward and object-oriented workflow when developing complex style cascades. Using xCSS means a dramatic cut down to your development time by: having a intuitive overview of the overall CSS structure, using variables, re-using existing style cascades and many other handy features.</p>
+<p><strong>Responsive:</strong> No</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://xcss.antpaw.org/">http://xcss.antpaw.org/</a></p>
+<h2 id="YACSS"><a href="#YACSS" class="headerlink" title="YACSS"></a>YACSS</h2><blockquote>
+<p>A fully responsive utility and component based CSS framework.</p>
+</blockquote>
+<p>With Yet another CSS framework you can simply use our beautiful predefined styles or you can design your own with the utility class approach. </p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://github.com/FlorianWoelki/YACSS/">https://github.com/FlorianWoelki/YACSS/</a></p>
+<p><strong>Github:</strong> <a target="_blank" rel="noopener" href="https://github.com/FlorianWoelki/YACSS/">https://github.com/FlorianWoelki/YACSS/</a></p>
+<h2 id="YAML"><a href="#YAML" class="headerlink" title="YAML"></a>YAML</h2><blockquote>
+<p>“Yet Another Multicolumn Layout” (YAML)</p>
+</blockquote>
+<p>YAML is an (X)HTML/CSS framework for creating modern and flexible floated layouts. The structure is extremely versatile in its programming and absolutely accessible for end users.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://www.yaml.de/">http://www.yaml.de/</a></p>
+<h2 id="YUI-CSS"><a href="#YUI-CSS" class="headerlink" title="YUI CSS"></a>YUI CSS</h2><blockquote>
+<p>Simple CSS for the web</p>
+</blockquote>
+<p>The foundational YUI CSS is an extremely lightweight layer of responsive CSS for your projects. It offers a customizable responsive grid , along with styling for forms, tables, menus, popovers, notifications, images and more. Plays nice with YUI’s JavaScript Framework.</p>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://yuilibrary.com/">http://yuilibrary.com/</a></p>
+
+      
+    </div>
+
+    
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问  的个人博客"></a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="https://lvyong.github.io/2020/10/09/front-end-framework/" title="front_end_framework">front_end_framework</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="https://lvyong.github.io/2020/10/09/front-end-framework/" title="front_end_framework">https://lvyong.github.io/2020/10/09/front-end-framework/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间： </strong>
+                2020年10月9日 - 11时10分
+            </li>  
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由  原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2020/11/24/mysql-use-md/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">mysql_use.md</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2020/08/13/linux-command/">
+        <span class="next-text nav-default">linux命令</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:lvg2010@126.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Lv YongGang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

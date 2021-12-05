@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="mysql"/>
+
+
+
+
+  <meta name="keywords" content="mysql, lvyong" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="lvyong" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="https://lvyong.github.io/2018/02/26/mysql/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> mysql - lvyong </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">lvyong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about/">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">lvyong</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          mysql
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-26
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">导出导入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C-mysql"><span class="toc-text">操作 mysql</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="导出导入数据"><a href="#导出导入数据" class="headerlink" title="导出导入数据"></a>导出导入数据</h3><ol>
+<li><p>导出所有数据库<br>该命令会导出包括系统数据库在内的所有数据库<br><code> mysqldump -uroot -proot --all-databases &gt;all.sql</code></p>
+</li>
+<li><p>导出db1, db2两个数据库的所有数据<br><code>  mysqldump -uroot -proot --databases db1 db2 &gt;twodbs.sql </code></p>
+</li>
+<li><p>导出db1中的a1、a2表<br><code>  mysqldump -uroot -proot --databases db1 --tables a1 a2 &gt;twotables.sql</code></p>
+</li>
+<li><p>导出db1库中表a1中id=1的数据<br><code> mysqldump -uroot -proot --databases db1 --tables a1 --where=&#39;id=1&#39;</code></p>
+</li>
+<li><p>只导出表结构不导出数据<br><code>  mysqldump -uroot -proot --no-data --databases db1 &gt;my.sql</code></p>
+</li>
+<li><p>跨服务器导出导入数据,-C启用压缩传送<br>`<br> mysqldump –host=h1 -uroot -proot -C  –databases db1 |mysql –host=h2</p>
+</li>
+</ol>
+<p>-uroot -proot db2<br>`    </p>
+<span id="more"></span>
+
+
+<h3 id="操作-mysql"><a href="#操作-mysql" class="headerlink" title="操作 mysql"></a>操作 mysql</h3><ol>
+<li><p>进入线上某机器的mysql<br><code>mysql -h xx.xx.xx.xx -uroot -p abcde</code></p>
+</li>
+<li><p>进入mysql的某个数据库<br><code>use user</code></p>
+</li>
+<li><p>显示某个库下的所有表<br><code>show tables;</code></p>
+</li>
+<li><p>显示mysql中所有数据库<br><code>show database;</code></p>
+</li>
+<li><p>显示某个表的结构<br><code>desc tableName</code></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+      
+         <div>    
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问  的个人博客"></a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="https://lvyong.github.io/2018/02/26/mysql/" title="mysql">mysql</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="https://lvyong.github.io/2018/02/26/mysql/" title="mysql">https://lvyong.github.io/2018/02/26/mysql/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间： </strong>
+                2018年2月26日 - 22时02分
+            </li>  
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由  原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/mysql/">mysql</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/03/12/android-adb-%E5%91%BD%E4%BB%A4/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">android_adb_命令</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/02/12/web%C2%B9%C2%A4%C2%B3I%CC%80O%CC%88%C3%90O%CC%81o%CC%88%C2%B5%C2%BD%C2%B5A%CC%88I%CC%82E%CC%82I%CC%80a%CC%82/">
+        <span class="next-text nav-default">搭建java web工程中遇到的问题</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:lvg2010@126.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Lv YongGang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

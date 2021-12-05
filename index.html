@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="个人博客"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="lvyong" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="https://lvyong.github.io/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> lvyong </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">lvyong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories/">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/about/">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">lvyong</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts">
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2021/04/15/webRTC/">webRTC</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2021-04-15
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>WebRTC<br>一、发展历程<br>       名称源自网页实时通信（Web Real-Time Communication）的缩写，是一项实时通讯技术，它允许网络应用或者站点，在不借助中间媒介的情况下，建立浏览器之间点对点（Peer-to-Peer）的连接，实现视频流和（或）音频流或者其他任意数据的传输，支持网页浏览器进行实时语音对话或视频对话。WebRTC包含的这些标准使用户在无需安装任何插件或者第三方的软件的情况下，创建点对点（Peer-to-Peer）的数据分享和电话会议成为可能。它是谷歌2010年5月以6820万美元收购拥有编解码、回声消除等技术的Global IP Solutions公司而获得的一项技术。该项目是由GIPS项目和libjingle项目融合而成。其中GIPS部分主要提供媒体的处理的功能。libjingle项目部分主要提供P2P传输部分的功能。2011年5月开放了工程的源代码，与相关机构 IETF 和 W3C 制定行业标准，组成了现有的 WebRTC 项目，在行业内得到了广泛的支持和应用，成为下一代视频通话的标准。</p>
+<pre><code>    ​ WebRTC是一个开源项目，旨在使得浏览器能为实时通信（RTC）提供简单的JavaScript接口。说的简单明了一点就是让浏览器提供JS的即时通信接口。这个接口所创立的信道并不是像WebSocket一样，打通一个浏览器与WebSocket服务器之间的通信，而是通过一系列的信令，建立一个浏览器与浏览器之间（peer-to-peer）的信道，这个信道可以发送任何数据，而不需要经过服务器。并且WebRTC通过实现MediaStream，通过浏览器调用设备的摄像头、话筒，使得浏览器之间可以传递音频和视频。
+</code></pre>
+          <div class="read-more">
+            <a href="/2021/04/15/webRTC/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2020/11/24/mysql-use-md/">mysql_use.md</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-11-24
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>一、基础规范</p>
+<p>（1）必须使用InnoDB存储引擎</p>
+<p>解读：支持事务、行级锁、并发性能更好、CPU及内存缓存页优化使得资源利用率更高<br>（2）必须使用UTF8字符集</p>
+<p>解读：万国码，无需转码，无乱码风险，节省空间<br>（3）数据表、数据字段必须加入中文注释</p>
+<p>解读：N年后谁知道这个r1,r2,r3字段是干嘛的</p>
+          <div class="read-more">
+            <a href="/2020/11/24/mysql-use-md/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2020/10/09/front-end-framework/">front_end_framework</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-10-09
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p><strong>Website:</strong> <a target="_blank" rel="noopener" href="https://github.com/cbrauckmuller/helium">https://github.com/cbrauckmuller/helium</a></p>
+<h2 id="IceCream"><a href="#IceCream" class="headerlink" title="IceCream"></a>IceCream</h2><blockquote>
+<p>Simple and light responsive grid system</p>
+</blockquote>
+<p><strong>Responsive:</strong> Yes</p>
+<p><strong>Website:</strong> <a target="_blank" rel="noopener" href="http://html5-ninja.com/icecream">http://html5-ninja.com/icecream</a></p>
+          <div class="read-more">
+            <a href="/2020/10/09/front-end-framework/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2020/08/13/linux-command/">linux命令</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-08-13
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h1 id="常见的linux的命名"><a href="#常见的linux的命名" class="headerlink" title="常见的linux的命名"></a>常见的linux的命名</h1><ol>
+<li>cd - 切换到上个目录 </li>
+<li>pushd popd dirs目录 操作目录栈。</li>
+<li>echo “新密码”|passwd –stdin 用户名<br>如 echo “新密码”|passwd –stdin 用户名<br>更改用户 hehe 的密码。</li>
+<li></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2020/08/11/gitlab-CI-CD/">gitlab_CI_CD</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-08-11
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="记录几个有用的关于编写-gitlab-ci-yml文件的文档链接"><a href="#记录几个有用的关于编写-gitlab-ci-yml文件的文档链接" class="headerlink" title="记录几个有用的关于编写.gitlab-ci.yml文件的文档链接"></a>记录几个有用的关于编写.gitlab-ci.yml文件的文档链接</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.debian.cn/archives/2537">https://www.debian.cn/archives/2537</a></li>
+<li><a target="_blank" rel="noopener" href="https://meigit.readthedocs.io/en/latest/gitlab_ci_.gitlab-ci.yml_detail.html">https://meigit.readthedocs.io/en/latest/gitlab_ci_.gitlab-ci.yml_detail.html</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2020/03/18/web-develope-md/">web_develope.md</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-03-18
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h1 id="记录平时开发遇到的问题，及解决办法。"><a href="#记录平时开发遇到的问题，及解决办法。" class="headerlink" title="记录平时开发遇到的问题，及解决办法。"></a>记录平时开发遇到的问题，及解决办法。</h1><ol>
+<li>当宽度width:100%时，padding-right不起作用。</li>
+</ol>
+<ul>
+<li>解决办法：增加box-sizing: border-box;</li>
+</ul>
+<ol start="2">
+<li>动态绑定图片<pre><code class="imageSrc:">   return require(`@/assets/icons/$&#123;this.icon&#125;`)
+ &#125;
+</code></pre>
+</li>
+<li>文本换行 css样式<br>word-break:break-all;<br>overflow-wrap:break-all;<br>hyphens:auto;<br>line-break:anywhere；</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2019/10/25/flutter-plugin-introducation-md1/">浅谈Flutter插件(一)</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-10-25
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h1 id="Flutter插件原理浅谈"><a href="#Flutter插件原理浅谈" class="headerlink" title="Flutter插件原理浅谈"></a>Flutter插件原理浅谈</h1><h2 id="Platform-Channel"><a href="#Platform-Channel" class="headerlink" title="Platform Channel"></a>Platform Channel</h2><ol>
+<li>Platform Channel是Flutter端与Platform端指定的通信机制，它分为三种:<br>(1) BasicMessageChannel: 用于传递字符串和半结构化的信息(在大内存数据块传递的情况下使用)。<br> (2) MethodChannel: 用于传递方法的调用（method invocation）。<br> (3) EventChannel:用于数据流（event streams）的通信。</li>
+</ol>
+<h2 id="消息传递与编解码器"><a href="#消息传递与编解码器" class="headerlink" title="消息传递与编解码器"></a>消息传递与编解码器</h2><p>   <img src="/image/flutter_plugin5.jpg" alt="avatar"><br>   从图中可以看出，不同的Handler对应不同的消息通道。<br>   其中，中间通信的消息都是编码的二进制格式形式，需要通过消息解码器进行处理。<br>   编码分为两种：MessageCodec 和MethodCodec。其中，MessageCodec包括BinaryCodec， StringCodec，JSONMesageCodec和 StandardMessageCodec,<br>   MethodCodec包括JSONMethodCodec 和 StandardMethodCodec。</p>
+          <div class="read-more">
+            <a href="/2019/10/25/flutter-plugin-introducation-md1/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2019/09/12/todoList/">todoList</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-09-12
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h1 id="1-以下是最近要阅读的技术文章"><a href="#1-以下是最近要阅读的技术文章" class="headerlink" title="1. 以下是最近要阅读的技术文章"></a>1. 以下是最近要阅读的技术文章</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://songxp.top/2017/01/15/IO%E6%B5%81/#http%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D">https://songxp.top/2017/01/15/IO流/#http协议介绍</a> </li>
+<li><a target="_blank" rel="noopener" href="http://yourbay.me/all-about-tech/2019/08/27/android-28-view-post/">http://yourbay.me/all-about-tech/2019/08/27/android-28-view-post/</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/flutter/plugins">https://github.com/flutter/plugins</a></li>
+<li><a target="_blank" rel="noopener" href="http://flutter.link/">http://flutter.link/</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_17775997/article/details/95471809">https://blog.csdn.net/sinat_17775997/article/details/95471809</a></li>
+<li><a target="_blank" rel="noopener" href="https://fenews.org/">https://fenews.org/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ccarea.cn/archives/708">https://www.ccarea.cn/archives/708</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010164190/article/details/78552155">https://blog.csdn.net/u010164190/article/details/78552155</a></li>
+<li><a target="_blank" rel="noopener" href="http://helloweb.wang/qianduankaifa/552.html">http://helloweb.wang/qianduankaifa/552.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hlwyfeng/p/5222391.html">https://www.cnblogs.com/hlwyfeng/p/5222391.html</a> (已经阅读)</li>
+<li><a target="_blank" rel="noopener" href="https://meandni.com/">https://meandni.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://css-tricks.com/an-introduction-and-guide-to-the-css-object-model-cssom/">https://css-tricks.com/an-introduction-and-guide-to-the-css-object-model-cssom/</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions//hh781509(v=vs.85)?redirectedfrom=MSDN">https://docs.microsoft.com/en-us/previous-versions//hh781509(v=vs.85)?redirectedfrom=MSDN</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/97a0694dae68">https://www.jianshu.com/p/97a0694dae68</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1540523">https://cloud.tencent.com/developer/article/1540523</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/JsonChao/Awesome-Android-Interview/blob/master/Android%E7%9B%B8%E5%85%B3/Android%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.md">https://github.com/JsonChao/Awesome-Android-Interview/blob/master/Android%E7%9B%B8%E5%85%B3/Android%E9%AB%98%E7%BA%A7%E9%9D%A2%E8%AF%95%E9%A2%98.md</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/dypsilon/frontend-dev-bookmarks">https://github.com/dypsilon/frontend-dev-bookmarks</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.dreamtobe.cn/android_d8_r8/">https://blog.dreamtobe.cn/android_d8_r8/</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.dreamtobe.cn/">https://blog.dreamtobe.cn/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.rrfed.com/category/basic/">https://www.rrfed.com/category/basic/</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903741183754253">https://juejin.im/post/6844903741183754253</a></li>
+</ol>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2019/08/29/learn-vue-01/">vue源码阅读(一)</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-08-29
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h1 id="vue初始化流程图"><a href="#vue初始化流程图" class="headerlink" title="vue初始化流程图"></a>vue初始化流程图</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>下面的代码分析是从vue1.0开始的</p>
+<p>vue的入口文件位于 src/index.md</p>
+<p>流程图如下：<br><img src="/image/vue-init.png" alt="avatar"></p>
+<h2 id="初始化流程"><a href="#初始化流程" class="headerlink" title="初始化流程"></a>初始化流程</h2><ol>
+<li><p>创建Vue对象时，先调用_init方法，完成以下功能</p>
+<p>进行一些属性的初始化，将自己加入父对象中，初始化data对象，初始化state,初始化event,<br>调用created事件，绑定元素到dom上。</p>
+</li>
+<li><p>初始化sate</p>
+<p>调用_initState方法, 将元信息属性设置成响应式对象，比如$index,$key,$value;将methods下的<br>各个方法绑定到当前vue对象中。将data中各个属性转变成可以观察的对象。computed中的各个对象或者<br>函数，绑定到当前this对象下，并且computed中的各个属性字段，调用get方法中，执行依赖传递，值的更新。</p>
+</li>
+<li><p>初始化event</p>
+<p>将option.events中的对象放到vm.$on对象下；将option.watch下的对象放到vm.$watch对象下。</p>
+</li>
+<li><p>执行created事件</p>
+</li>
+<li><p>调用$mount方法</p>
+<p>$mount方法定义在lifecycle.js中。如果当前optiony对象有el，则执行mount方法。</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2></li>
+<li><p>Compile - 源码属性解析(<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1479372">https://cloud.tencent.com/developer/article/1479372</a>)</p>
+          <div class="read-more">
+            <a href="/2019/08/29/learn-vue-01/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2019/08/29/how-write-blog/">怎么编写个人博客</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-08-29
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h1 id="利用hexo工具编写个人博客"><a href="#利用hexo工具编写个人博客" class="headerlink" title="利用hexo工具编写个人博客"></a>利用hexo工具编写个人博客</h1><ol>
+<li><p>安装<br>打开Git Bash，输入以下命令安装Hexo<br><code>npm install -g hexo-cli</code></p>
+</li>
+<li><p>初始化<br>打开Git Bash，输入命令<br><code>hexo init [folder]</code><br>[folder]代表的是你的hexo文件夹名，如果不写，就默认在当前文件夹初始化。 </p>
+</li>
+<li><p>然后进入你的hexo文件夹<br><code>cd [folder]</code></p>
+</li>
+<li><p>生成静态文件<br>需要执行generate命令生成静态文件，才能部署到服务器<br><code>hexo g</code></p>
+          <div class="read-more">
+            <a href="/2019/08/29/how-write-blog/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    
+    
+      <a class="next" href="/page/2/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+          </div>
+          
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:lvg2010@126.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2021
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Lv YongGang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
